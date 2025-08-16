@@ -14,9 +14,13 @@
 | sql数字人 | 翻译sql业务含义 | 1. 加速理解业务<br>2. 数据转换成业务资产<br>3. 辅助快速定位 |[sql数字人](#sql数字人)| zqf20096327 |
 
 
-
+## 效果展示
 ### sql数字人
 <details>
-<summary>样例</summary>
-xxxxxx
+<summary>效果展示</summary>
+  <img width="582" height="592" alt="image" src="https://github.com/user-attachments/assets/a2c74b06-4978-43ec-bfd6-eabc0496b1ed" />
+  <img width="933" height="807" alt="image" src="https://github.com/user-attachments/assets/acc1246c-8d2d-49cb-9a12-ad6a51bbb035" />
+  <img width="1015" height="780" alt="image" src="https://github.com/user-attachments/assets/d235b716-67f5-4363-8380-8ae540c0287a" />
+  <img width="657" height="277" alt="image" src="https://github.com/user-attachments/assets/82a2117d-4a41-4319-ad63-56090f0c0c3a" />
+
 </details>
