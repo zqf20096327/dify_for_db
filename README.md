@@ -1,37 +1,68 @@
-# Dify_for_DB
-基于dify开源项目实现在数据库，IT运维领域的AI应用
-# 使用说明
-## 1 打开dify
-<img width="1879" height="492" alt="image" src="https://github.com/user-attachments/assets/d017c7a8-9b63-42c6-9647-526efcd61e63" />
+# AI-DB Toolkit —— 基于 Dify 的 AI 驱动数据库智能工具箱
+AI-DB Toolkit​ 是面向数据库从业者（DBA、数据工程师、数据库开发者）的 ​AI 落地实践平台，​基于 Dify 工作流引擎深度构建，聚焦 AI 与数据库技术深度融合的真实场景，提供可复用的 AI 解决方案、技术细节文档、实操示例，覆盖数据库开发、运维、管理的全生命周期，助力团队解决效率、规范、故障等核心痛点。
 
-## 2 导入DSL
-<img width="1868" height="660" alt="image" src="https://github.com/user-attachments/assets/4ad1a9e2-9020-40ab-bb12-6ec95f215f53" />
+# ​为什么需要 AI-DB Toolkit？​​
+数据库开发与运维中，从业者常面临以下挑战：
 
-## 功能清单
+•开发效率低​：业务需求需反复沟通翻译为 SQL，代码缺乏注释，规范违规难排查；
 
-| 名称 | 功能说明 | 价值说明 | 效果展示 | 作者 |
-|:----:|:-----|:-----|:-----|:-------|
-| sql业务解析 | 根据用户输入的SQL，自动翻译sql业务含义 | 1. 代码可读性与维护性提升 使SQL语句的业务意图显式化并且新团队成员无需逐行分析复杂SQL就能理解业务逻辑<br>2. 开发效率提升，快速定位SQL对应的业务场景，为数据库重构提供业务上下文<br>3. 决策支持 评估SQL变更会影响哪些业务功能，通过SQL反向追踪业务规则演变历史<br>4. 业务价值 自动生成最新、准确的SQL业务文档  跟踪SQL业务逻辑的历史变更 构建可搜索的SQL业务知识库|[sql业务解析](#sql业务解析)| zqf20096327 |
-| sql自动注释 | 针对数据库存储过程自动注释 | 1. 代码可读性与维护性提升 后续维护者（包括团队新成员）能快速理解代码逻辑，降低“阅读成本”，尤其在长期维护或跨团队协作中效果显著。<br>2. 开发效率提升 减少重复劳动<br>3. 决策支持<br>4. 业务价值 跨项目复用 SQL 片段时，注释同步携带上下文，避免重复造轮子|[sql自动注释](#sql自动注释)| zqf20096327 |
+•运维成本高​：故障排查依赖经验，容量规划靠估算，错误代码/参数需人工查阅文档；
 
-## 效果展示
-### sql业务解析
+•技术探索难​：AI 与数据库结合的概念多，但缺乏“能直接用”的落地案例。
+
+​AI-DB Toolkit​ 以“场景化、可复用、技术透明”为核心，​依托 Dify 的低代码工作流编排能力，将 AI 能力转化为 ​可直接融入日常工作的工具，让数据库从业者“用得上、改得了、看得懂”。
+
+# ​核心覆盖场景​
+项目围绕数据库工作流全环节，覆盖从开发到运维、从知识管理到工具智能的全场景需求
+
+# 场景分类
+
+| 场景分类 | 具体场景 | 解决痛点 | 
+| :-----| :---- | :---- |
+| ​智能开发辅助​ | SQL 业务翻译、SQL 自动注释、SQL 优化审核、数据库设计规范校验 | 减少需求沟通成本，提升代码可维护性，避免规范违规和性能隐患| 
+| ​​运维优化​​ | 数据库故障诊断（根因分析+修复方案）、容量规划 、错误代码翻译 |缩短故障排查时间，优化资源分配，降低错误处理门槛 | 
+| ​​知识管理​​ | 日常问题速查手册（AI 结构化知识库）、最佳参数实践评审（科学调优建议） |整合分散知识，提供数据驱动的参数调优依据 | 
+| ​​工具智能化​​ | 命令智能化、代码转换 |降低命令记忆成本，加速业务迁移与技术转型 | 
+
+# 适用对象
+•​数据库从业者​（DBA、数据工程师）：直接复用 Dify 工作流示例解决日常问题（如 SQL 优化、故障诊断），通过 Dify 可视化界面调整参数适配业务；
+
+•技术管理者​：通过 Dify 的工作流统计功能（如执行成功率、耗时分布）评估 AI 落地效果，制定团队智能化转型策略；
+
+•AI/数据库开发者​：基于 Dify 的插件开发框架（src/dify-plugins）扩展自定义能力（如新增数据库连接器），参与社区贡献（提交新场景方案或模型优化）
+
+•对数据库或者AI应用有兴趣的人员
+
+# 如何开始
+## 1：打开dify
+<img width="1903" height="604" alt="image" src="https://github.com/user-attachments/assets/79ebd44f-7f41-445c-b144-71213695509a" />
+
+## 2：导入dsl
+<img width="1895" height="647" alt="image" src="https://github.com/user-attachments/assets/47082449-b310-4b96-88c5-5cd7ce189d5f" />
+
+# 场景一：智能开发辅助
+## sql业务翻译
+### 解决痛点：
+1：SQL 语义“黑箱化”，快速解析业务目的，提升维护与审计效率； 
+2：注释缺失或过时，自动校验并补全语义，减少理解偏差； 
+3：跨团队沟通低效，生成需求-SQL映射报告，降低沟通成本； 
+4：知识沉淀不足，结构化存储解析结果，缩短新人学习周期
+
+### 效果展示
 <details>
-<summary>效果展示</summary>
-  <img width="582" height="592" alt="image" src="https://github.com/user-attachments/assets/a2c74b06-4978-43ec-bfd6-eabc0496b1ed" />
-  <img width="933" height="807" alt="image" src="https://github.com/user-attachments/assets/acc1246c-8d2d-49cb-9a12-ad6a51bbb035" />
-  <img width="1015" height="780" alt="image" src="https://github.com/user-attachments/assets/d235b716-67f5-4363-8380-8ae540c0287a" />
-  <img width="657" height="277" alt="image" src="https://github.com/user-attachments/assets/82a2117d-4a41-4319-ad63-56090f0c0c3a" />
+<img width="1799" height="892" alt="image" src="https://github.com/user-attachments/assets/84a4d1f5-6bb7-44d0-87e0-b8e719ed0ded" />
 </details>
 
-### sql自动注释
+## sql自动注释
+### 解决痛点：
+1：复杂SQL结构（多表JOIN、嵌套查询）注释缺失，开发/维护人员难以快速理解业务逻辑；
+2：人工编写注释耗时且易遗漏关键信息，尤其频繁修改时效率低下；
+3：注释与实际字段含义可能脱节（如字段重命名未同步更新注释），导致理解偏差；
+4：跨团队协作时注释不清晰，其他成员需反复确认逻辑，沟通成本高。功能通过元数据驱动注释生成，提升代码可读性与维护效率
+
+### 效果展示
 <details>
-<summary>效果展示</summary>
-  <img width="555" height="887" alt="image" src="https://github.com/user-attachments/assets/52136cfc-b7b4-4fea-9975-9fec80c46e6c" />
-  <img width="1015" height="654" alt="image" src="https://github.com/user-attachments/assets/f1f534de-f170-42e6-ad7e-4a4f2861f544" />
-  <img width="1010" height="661" alt="image" src="https://github.com/user-attachments/assets/5eed6145-a079-4dba-9d3d-f2fdb383ccd6" />
-  <img width="964" height="907" alt="image" src="https://github.com/user-attachments/assets/da037cac-1d50-4315-ac29-8e045058994f" />
-  <img width="952" height="940" alt="image" src="https://github.com/user-attachments/assets/3ba37880-b899-4557-9c8e-b232e2106f5c" />
-  <img width="732" height="282" alt="image" src="https://github.com/user-attachments/assets/d2e1b31b-060e-4e64-aafd-aebfc74a6f32" />
+<img width="1864" height="951" alt="image" src="https://github.com/user-attachments/assets/44e7defe-188c-4afb-9150-34c843836688" />
+<img width="1870" height="920" alt="image" src="https://github.com/user-attachments/assets/1653827c-d7d0-4135-852b-9393fb5e590c" />
 
 </details>
