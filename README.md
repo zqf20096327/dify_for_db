@@ -84,3 +84,24 @@ AI-DB Toolkit​ 是面向数据库从业者（DBA、数据工程师、数据库
 <img width="1839" height="912" alt="image" src="https://github.com/user-attachments/assets/f60e1c7f-db03-409d-a278-a8d423ea8e5d" />
 
 </details>
+
+## 数据库参数自动生成
+### 解决痛点：
+自动生成MySQL参数文件通过参数化模板与动态数据注入，解决手动配置效率低、易出错、难维护的核心痛点
+
+1：大幅提升效率，秒级生成多环境配置，避免重复编写 ;
+
+2：保障准确性，杜绝拼写错误、单位遗漏及格式混乱，嵌入注释说明提升可读性 ;
+
+3：灵活适配不同硬件资源（如CPU/内存自动计算关键参数）、业务场景（开发/测试/生产环境差异）及云平台特性 ;
+
+4：强化安全性，隔离敏感信息（如密码）、自动注入合规参数（如SSL加密） ;
+
+5：简化运维，支持动态调整（如扩容后自动重算缓冲池）、版本控制与差异对比 ;
+
+6：扩展至其他数据库及中间件（如Redis/PostgreSQL），成为配置管理的通用解决方案，显著降低技术门槛与运维成本。
+
+### 效果展示
+<details>
+<img width="1680" height="928" alt="image" src="https://github.com/user-attachments/assets/fec8177e-bcf3-45d3-8bd8-7b0486f18ef2" />
+</details>
